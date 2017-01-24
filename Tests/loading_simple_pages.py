@@ -25,4 +25,4 @@ class LoadingSimplePagesTest(unittest.TestCase):
         # zawsze self.driver + czas
         WebDriverWait(self.driver,10).until(expected_conditions.presence_of_element_located((By.ID,'article_10154_10826_23915_1.1')))
         # WebDriverWait(self.driver, 10).until(expected_conditions.presence_of_element_located((By.XPATH, elId)))
-        page_faq.wait_for_text_in_element('//*[@id="article_10154_10826_23915_1.1"]//p', 'ź')
+        page_faq.wait_for_text_in_element(page_faq.locators_list['FAQcontent'], page_faq.other_attributes_list['text'])
