@@ -24,11 +24,5 @@ class LoadingSimplePagesTest(unittest.TestCase):
         self.assertTrue(page_faq.find_visible_href('[href="http://pg.edu.pl/dzial-obiegu-i-archiwizacji-dokumentow/faq"]'), 'Brak widocznego linka FAQ')
         # zawsze self.driver + czas
         WebDriverWait(self.driver,10).until(expected_conditions.presence_of_element_located((By.ID,'article_10154_10826_23915_1.1')))
-        # elIdXPath = '//*[@id="article_10154_10826_23915_1.1"]//p'
-        # text = 'ź'
         # WebDriverWait(self.driver, 10).until(expected_conditions.presence_of_element_located((By.XPATH, elId)))
-        # try:
-        #     WebDriverWait(self.driver,10).until(expected_conditions.text_to_be_present_in_element((By.XPATH, elId),text))
-        # except:
-        #     print('Brak tekstu %s w elemencie %s' % (text, elId))
         page_faq.wait_for_text_in_element('//*[@id="article_10154_10826_23915_1.1"]//p', 'ź')
